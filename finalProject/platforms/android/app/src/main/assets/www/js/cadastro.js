@@ -16,8 +16,7 @@ function inicilizarComponentes(){
         var password = $('#inputPassword').val();
         var name = $('#inputName').val();
         var lastName = $('#inputLastName').val();
-        // signin(name,lastName,email,password,"index.html")
-        signin2(name, lastName,email,password)
+        cadastrarUsuario(name, lastName,email,password)
     
     });
 
