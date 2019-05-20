@@ -34,7 +34,6 @@ function autenticar(email, password) {
             window.location = "inicio.html";
         })
         .catch(function(error) {
-            console.error(error);
-            alert("Anderson " + error);
+            alert("Erro ao autenticar:  " + error);
         });
 }

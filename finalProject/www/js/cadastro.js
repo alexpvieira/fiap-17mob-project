@@ -20,6 +20,12 @@ function inicilizarComponentes(){
     
     });
 
+    $("#btSair").click(function() {
+
+        window.history.back();
+    
+    });
+
 }
 
 function autenticar(email, password) {
