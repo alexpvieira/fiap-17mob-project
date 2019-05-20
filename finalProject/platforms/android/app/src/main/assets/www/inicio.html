@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Henrique Lima">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-functions.js"></script>
+
+    <!-- Bootstrap / Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/project.js"></script>
+    <!-- <script src="js/login.js"></script> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+
+    <script >
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    alert("usuariio Logado");
+  } else {
+    // No user is signed in.
+  }
+});
+    
+    </script>
+
+    <title>Tela Login</title>
+</head>
+
+<body>
+    <form class="form-signin">
+        <!-- <button id="btLogin" class="btn btn-lg btn-primary btn-block" type="button">Entrar</button>
+        <button id="btCadastrese" class="btn btn-lg btn-primary btn-block" type="button">Cadastre-se</button> -->
+        <button id="btPerfil" class="btn btn-lg btn-primary btn-block" type="button">Perfil</button>
+        <button id="btApi" class="btn btn-lg btn-primary btn-block" type="button">API</button>
+        <button id="btSair" class="btn btn-lg btn-primary btn-block" type="button">Sair</button>
+    </form>
+</body>
+
+</html>
+
+<script>
+
+    $("#btPerfil").click(function() {
+
+        window.location = "perfil.html"
+
+    });
+
+    $("#btApi").click(function() {
+
+        window.location = "pokemons.html"
+
+    });btApo
+
+</script>
