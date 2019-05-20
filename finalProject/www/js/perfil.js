@@ -28,8 +28,8 @@ function buscandoDadosUsuario(userId) {
 
     firebase.database().ref('Usuario/' + userId).once('value').then(function(snapshot) {
         if (snapshot.val() !== null) {
-            var user = snapshot.val()
-            inserirDados(user)
+            dataUser = snapshot.val()
+            inserirDados(dataUser)
             waitingDialog.hide();
         } else {
             waitingDialog.hide();
@@ -55,7 +55,7 @@ function uploadFirebase() {
 
     var image = document.getElementById("image").src;
 
-    // if (image.indexOf('base64') !== -1) {
+    if (image.indexOf('base64') !== -1) {
         var teste = image.indexOf('base64');
         var filename = firebase.auth().currentUser.uid + "_avatar.jpg";
         var file = dataURLtoFile(image, filename);
@@ -104,46 +104,40 @@ function uploadFirebase() {
 
                 });
             });
-    // } else {
-    //     saveBaseFirebase();
-    // }
+    } else {
+        saveBaseFirebase();
+    }
 }
 
 function saveBaseFirebase(downloadURL) {
     
     var name = $('#inputName').val();
-    var phone = $('#inputPhone').val();
+    var lastName = $('#inputLastName').val();
 
-    var id = data.id;
-    var email = data.email;
-    var create = data.create;
+    var email = dataUser.email;
     var avatar = "";
 
-    if (data && data.avatar) {
-        avatar = data.avatar;
+    if (dataUser && dataUser.avatar) {
+        avatar = dataUser.avatar;
     }
 
     if (downloadURL) {
         avatar = downloadURL;
     }
 
-    db.collection("APP_USER_DEFAULT").doc(id).set({
-            id: id,
-            name: name,
-            phone: phone,
-            email: email,
-            avatar: avatar,
-            create: create,
-            update: new Date
-        })
-        .then(function(docRef) {
-            waitingDialog.hide();
-            console.log("Document ok update");
-        })
-        .catch(function(error) {
-            waitingDialog.hide();
-            console.log("Error writing document: ", error);
-        });
+   
+            firebase.database().ref('Usuario/' + firebase.auth().currentUser.uid).set({
+                nome: name,
+                email: email,
+                sobrenome : lastName,
+                avatar:avatar
+              },function(error) {
+                if (error) {
+                  alert("erro: " + error);
+                } else {
+                    alert("alterou com sucesso")
+                }
+              });
 
 }
 
