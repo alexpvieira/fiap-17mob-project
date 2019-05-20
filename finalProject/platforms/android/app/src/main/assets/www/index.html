@@ -23,6 +23,17 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
 
+    <script >
+            firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            alert("usuariio Logado");
+          } else {
+            // No user is signed in.
+          }
+        });
+            
+    </script>
+
     <title>Tela Login</title>
 </head>
 
