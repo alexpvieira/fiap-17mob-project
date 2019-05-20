@@ -94,7 +94,7 @@ function cadastrarUsuario(name, lastName, email, password) {
                 if (error) {
                   alert("erro: " + error);
                 } else {
-                    window.location = "home.html";
+                    window.location = "inicio.html";
                 }
               });
 
