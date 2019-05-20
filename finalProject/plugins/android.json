@@ -8,7 +8,10 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.henrique.projeto"
+      "PACKAGE_NAME": "br.com.anderltda.project"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "br.com.anderltda.project"
     }
   },
   "dependent_plugins": {}

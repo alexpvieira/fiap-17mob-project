@@ -1,4 +1,4 @@
-#Sat Apr 13 11:35:04 BRT 2019
-base.0=/Users/henriquelima/Desktop/projetosCordova/fiap-17mob-project/finalProject/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Sun May 19 21:55:15 BRT 2019
+base.0=/Users/henriquelima/Documents/trabalhoCordova/fiap-17mob-project/finalProject/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,78 +1,50 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<!doctype html>
+<html lang="en">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Henrique Lima">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-functions.js"></script>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
+    <!-- Bootstrap / Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/login.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+
+    <title>Tela Login</title>
+</head>
+
+<body>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img id="imgLogo" class="mb-4" src="img/logo2.jpg" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">Meus Games</h1>
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        </div>
+
+        <button id="btLogin" class="btn btn-lg btn-primary btn-block" type="button">Entrar</button>
+        <button id="btCadastrese" class="btn btn-lg btn-primary btn-block" type="button">Cadastre-se</button>
         
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <!-- <script src="js/bootstrap.min.js"></script> -->
-        <title>Hello World</title>
-    </head>
-    <body>
-        <form class="needs-validation" novalidate>
-            
+    </form>
+</body>
 
-            <div class="mb-3">
-                
-                <div class="input-group">
-                    <input type="email" class="form-control" id="username" placeholder="Email" required>
-                    <div class="invalid-feedback" style="width: 100%;">
-                        É necessário informar um email.
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3 mb-3">
-                    
-                    <input type="senha" class="form-control" id="senha" placeholder="Senha" required>
-                    <div class="invalid-feedback">
-                        É necessário informar o CEP.
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar</button>
-        </form>
-        <!-- <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div> -->
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
 </html>

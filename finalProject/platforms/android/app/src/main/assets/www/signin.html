@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Anderson Nascimento">
+    <title>Sign-in</title>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-messaging.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/6.0.2/firebase-functions.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-waitingfor.js"></script>
+    <script type="text/javascript" src="js/form-validation.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/project.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="img/bootstrap-solid.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Sign-in</h1>
+            <p>Por favor preencha os dados abaixo <code>todos os campos sao obrigatorios</code>
+            </p>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            <label for="inputEmail">Email</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
+            <label for="inputPassword">Password</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="text" id="inputPhone" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11" placeholder="Phone" required autofocus>
+            <label for="inputPhone">Phone</label>
+            <div class="invalid-feedback">
+                É necessário informar um telefone celular.
+            </div>
+        </div>
+
+        <button id="signin" class="btn btn-primary btn-lg btn-block" type="button">Create</button>
+        <button id="go_back" class="btn btn-lg btn-primary btn-block" type="button">Back</button>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+    </form>
+</body>
+
+</html>
+
+
+<script>
+    $(document).ready(function() {
+
+        $('#inputName').focus();
+
+    });
+
+    $("#signin").click(function() {
+
+        waitingDialog.show('Salvando aguarde...', {
+            dialogSize: 'm',
+            progressType: 'success'
+        });
+        setTimeout(function() {
+            waitingDialog.hide();
+        }, 2000);
+
+        var name = $('#inputName').val();
+        var phone = $('#inputPhone').val();
+        var email = $('#inputEmail').val();
+        var password = $('#inputPassword').val();
+
+        singin(name, phone, email, password, "index.html");
+
+    });
+</script>
