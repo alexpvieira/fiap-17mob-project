@@ -9,6 +9,10 @@ function inicializarComponents(){
     $("#btAlterar").click(function() {
         uploadFirebase();
     });
+
+    $("#btVoltar").click(function() {
+        window.history.back();
+    });
 }
 
 function buscarIdUsuario(){
@@ -125,7 +129,6 @@ function saveBaseFirebase(downloadURL) {
         avatar = downloadURL;
     }
 
-   
             firebase.database().ref('Usuario/' + firebase.auth().currentUser.uid).set({
                 nome: name,
                 email: email,
@@ -134,8 +137,10 @@ function saveBaseFirebase(downloadURL) {
               },function(error) {
                 if (error) {
                   alert("erro: " + error);
+                  waitingDialog.hide();
                 } else {
-                    alert("alterou com sucesso")
+                    alert("Alteracao feita com sucesso")
+                    waitingDialog.hide();
                 }
               });
 
